@@ -1,7 +1,7 @@
 # simple-chatbot
 Simple chatbot designed for course assignment.
 
-###**Documentation:**
+### **Documentation:**
 For task two, we were asked to implement a simple "chatbot" using "Sockets". And that is how Drew (the chatbot) was created.
 
 For the most part, i did stick with the sample, although I did change a couple things to improve the program's functionalities. I first noticed that for lines with spaces, example "How are you?", it would send each word seperately, so to bypass this, i used fgets instead of scanf. The problem with fgets is that to recognize when a line has ended, it adds an extra character to the end. Therefore to remove it, I used the `strcspn` to correct that.
@@ -59,11 +59,3 @@ while( (read_size = recv(client_sock , client_message , 2000 , 0)) > 0 )
 ```
 
 The heart of the code is essentially a huge if statement within a while loop. while it is running, it recieves messages and compares it with all the phrases specified. If one of the phrases matches, it will respond with that predetermined return. Otherwise, it will run the `else` statement claiming that it did not understand what you tried to ask. If you send the message '-help', the chatbot will list the questions that it is able to answer.
-
-###**Screenshots:**
-**Screenshot One**
-*NOTE: Print statements were used for debugging purposes*
-![alt text](server-one.png "Screenshot 1")
-
-**Screenshot Two**
-![alt text](client-one.png "Screenshot 2")
